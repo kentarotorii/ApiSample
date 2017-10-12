@@ -1,5 +1,5 @@
 class PoemsController < ApplicationController
-  before_action :set_poem, only: [:show]
+  #before_action :set_poem, only: [:show]
 
   def index
     @poems = Poem.all
@@ -7,6 +7,7 @@ class PoemsController < ApplicationController
   end
 
   def show
+    @poem = Poem.find(params[:id])
     render json: @poem
   end
 
